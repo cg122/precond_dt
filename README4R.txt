@@ -1,0 +1,1 @@
+This project uses RWeka package to learn a decision tree for precondition mining based on the predicates.
