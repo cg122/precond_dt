@@ -1,0 +1,16 @@
+{
+    "contents" : "sampleLearning <- function(x, datafile =) {\n  \n}\n\nlibrary(\"RWeka\")\n# read data from an .arff file(already reduced truth table)\ndata = read.arff(\"d:/workspace/r/precond_dt/evernote_reduce.arff\")\n# learn decision tree with the whole data, as baseline\nm1 = J48(EDAM ~ ., data = data)\n# sample 1/10, 1/4, 1/2, 3/4 of data to learn DT\nrow = rownames(data)\n# \nratio = 3/4 # 1/10, 1/4, 1/2, 3/4\ndata_16 = subset(data,(row %in% sample(1:length(row),length(row)*ratio,replace=FALSE)))\nm16 = J48(EDAM ~ ., data = data_16)\n\n# write result DT and data to files, need to revise\ntmp = file(\"full.data\",\"w\")\nwrite_to_dot(m1)\nwrite_to_dot(m1, con = tmp)\nclose(tmp)\nexit\n",
+    "created" : 1353920998625.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1607449439",
+    "id" : "D9BFFED2",
+    "lastKnownWriteTime" : 1356944585,
+    "path" : "D:/workspace/R/precond_dt/evernote.r",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

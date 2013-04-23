@@ -1,0 +1,21 @@
+{
+    "contents" : "",
+    "created" : 1355206014125.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "4E1FD7F4",
+    "lastKnownWriteTime" : 578055781,
+    "path" : null,
+    "properties" : {
+        "contentUrl" : "content?title=Data%3A+loan&file=3338b233beaa46329203a6aa6bf48b3f.htm",
+        "displayedObservations" : "10",
+        "displayedVariables" : 4,
+        "title" : "Data: loan",
+        "totalObservations" : "10",
+        "variables" : "4"
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}
