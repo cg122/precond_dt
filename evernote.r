@@ -1,22 +1,29 @@
-sampleLearning <- function(x, datafile =) {
+sampleLearning <- function(rate=1, datafile="d:/workspace/r/precond_dt/evernote_reduce.arff") {
+  library("RWeka")
+  # read data from an .arff file(already reduced truth table)
+#   if(data == NULL){
+    data = read.arff(datafile)
+#   }  
+  # learn decision tree with the whole data, as baseline
+  m1 = J48(EDAM ~ ., data = data)
+  # get rownames of data, in this case the row number of the rows
+  row = rownames(data)
+  # sample 1/10, 1/4, 1/2, 3/4 of data to learn DT
+  ratio = rate # 1/10, 1/4, 1/2, 3/4
+  sampledata = subset(data,(row %in% sample(1:length(row),length(row)*ratio,replace=FALSE)))
   
+  m_samp = J48(EDAM ~ ., data = sampledata)
+  outputdir = "results"
+  if(!file.exists(outputdir)){
+    dir.create(file.path(getwd(),outputdir))
+  }
+  # write result DT and data to files, need to revise
+  resultfile = paste(getwd(),outputdir,paste(paste(format(Sys.time(),"%y%m%d_%H%M%S"),length(sampledata),sep="_"),"dat", sep="."), sep="/")
+  tmp = file(resultfile,"w")
+  write.table(sampledata,tmp)
+  #write_to_dot(m1)
+  write_to_dot(m1, con = tmp)
+  close(tmp)
 }
 
-library("RWeka")
-# read data from an .arff file(already reduced truth table)
-data = read.arff("d:/workspace/r/precond_dt/evernote_reduce.arff")
-# learn decision tree with the whole data, as baseline
-m1 = J48(EDAM ~ ., data = data)
-# sample 1/10, 1/4, 1/2, 3/4 of data to learn DT
-row = rownames(data)
-# 
-ratio = 3/4 # 1/10, 1/4, 1/2, 3/4
-data_16 = subset(data,(row %in% sample(1:length(row),length(row)*ratio,replace=FALSE)))
-m16 = J48(EDAM ~ ., data = data_16)
 
-# write result DT and data to files, need to revise
-tmp = file("full.data","w")
-write_to_dot(m1)
-write_to_dot(m1, con = tmp)
-close(tmp)
-exit

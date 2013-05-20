@@ -1,16 +1,16 @@
 {
-    "contents" : "sampleLearning <- function(x, datafile =) {\n  \n}\n\nlibrary(\"RWeka\")\n# read data from an .arff file(already reduced truth table)\ndata = read.arff(\"d:/workspace/r/precond_dt/evernote_reduce.arff\")\n# learn decision tree with the whole data, as baseline\nm1 = J48(EDAM ~ ., data = data)\n# sample 1/10, 1/4, 1/2, 3/4 of data to learn DT\nrow = rownames(data)\n# \nratio = 3/4 # 1/10, 1/4, 1/2, 3/4\ndata_16 = subset(data,(row %in% sample(1:length(row),length(row)*ratio,replace=FALSE)))\nm16 = J48(EDAM ~ ., data = data_16)\n\n# write result DT and data to files, need to revise\ntmp = file(\"full.data\",\"w\")\nwrite_to_dot(m1)\nwrite_to_dot(m1, con = tmp)\nclose(tmp)\nexit\n",
+    "contents" : "sampleLearning <- function(rate=1, datafile=\"d:/workspace/r/precond_dt/evernote_reduce.arff\") {\n  library(\"RWeka\")\n  # read data from an .arff file(already reduced truth table)\n#   if(data == NULL){\n    data = read.arff(datafile)\n#   }  \n  # learn decision tree with the whole data, as baseline\n  m1 = J48(EDAM ~ ., data = data)\n  # get rownames of data, in this case the row number of the rows\n  row = rownames(data)\n  # sample 1/10, 1/4, 1/2, 3/4 of data to learn DT\n  ratio = rate # 1/10, 1/4, 1/2, 3/4\n  sampledata = subset(data,(row %in% sample(1:length(row),length(row)*ratio,replace=FALSE)))\n  \n  m_samp = J48(EDAM ~ ., data = sampledata)\n  outputdir = \"results\"\n  if(!file.exists(outputdir)){\n    dir.create(file.path(getwd(),outputdir))\n  }\n  # write result DT and data to files, need to revise\n  resultfile = paste(getwd(),outputdir,paste(paste(format(Sys.time(),\"%y%m%d_%H%M%S\"),length(sampledata),sep=\"_\"),\"dat\", sep=\".\"), sep=\"/\")\n  tmp = file(resultfile,\"w\")\n  write.table(sampledata,tmp)\n  #write_to_dot(m1)\n  write_to_dot(m1, con = tmp)\n  close(tmp)\n}\n\n\n",
     "created" : 1353920998625.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1607449439",
+    "hash" : "1528786111",
     "id" : "D9BFFED2",
-    "lastKnownWriteTime" : 1356944585,
+    "lastKnownWriteTime" : 1369041721,
     "path" : "D:/workspace/R/precond_dt/evernote.r",
     "properties" : {
         "tempName" : "Untitled1"
     },
-    "source_on_save" : false,
+    "source_on_save" : true,
     "type" : "r_source"
 }
