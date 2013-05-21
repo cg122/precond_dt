@@ -1,0 +1,15 @@
+"created" "updated" "deleted" "active" "created<updated" "created<deleted" "updated<deleted" "EDAM"
+"4" "T" "T" "T" "T" "F" "T" "T" "True"
+"7" "T" "T" "T" "F" "T" "T" "T" "False"
+"20" "T" "T" "F" "F" "F" "F" "F" "False"
+"33" "F" "T" "T" "T" "T" "T" "T" "True"
+"39" "F" "T" "T" "F" "F" "T" "T" "False"
+"66" "F" "F" "F" "F" "F" "F" "F" "False"
+digraph J48Tree {
+N0 [label="active" ]
+N0->N1 [label="= T"]
+N1 [label="True (2.0)" shape=box style=filled ]
+N0->N2 [label="= F"]
+N2 [label="False (4.0)" shape=box style=filled ]
+}
+

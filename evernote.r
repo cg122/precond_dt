@@ -17,13 +17,15 @@ sampleLearning <- function(rate=1, datafile="d:/workspace/r/precond_dt/evernote_
   if(!file.exists(outputdir)){
     dir.create(file.path(getwd(),outputdir))
   }
-  # write result DT and data to files, need to revise
-  resultfile = paste(getwd(),outputdir,paste(paste(format(Sys.time(),"%y%m%d_%H%M%S"),length(sampledata),sep="_"),"dat", sep="."), sep="/")
+  # write result DT and data to files
+  resultfile = paste(getwd(),outputdir,paste(paste(format(Sys.time(),"%y%m%d_%H%M%OS3"),length(sampledata),sep="_"),"dat", sep="."), sep="/")
   tmp = file(resultfile,"w")
   write.table(sampledata,tmp)
   #write_to_dot(m1)
-  write_to_dot(m1, con = tmp)
+  write_to_dot(m_samp, con = tmp)
   close(tmp)
 }
 
-
+exp <- function(rate,times){
+  for (i in 1:times) sampleLearning(rate)
+}
