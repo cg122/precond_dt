@@ -1,0 +1,26 @@
+
+@RELATION precondition
+
+@ATTRIBUTE created  {T,F}
+@ATTRIBUTE updated 	{T,F}
+@ATTRIBUTE deleted 	{T,F}
+@ATTRIBUTE active	{T,F}
+@ATTRIBUTE EDAM 	{True,False}
+
+@DATA
+T,T,T,T,True
+T,T,T,F,False
+T,T,F,T,False
+T,T,F,F,False
+T,F,T,T,True
+T,F,T,F,False
+T,F,F,T,False
+T,F,F,F,False
+F,T,T,T,True
+F,T,T,F,False
+F,T,F,T,False
+F,T,F,F,False
+F,F,T,T,True
+F,F,T,F,False
+F,F,F,T,False
+F,F,F,F,False

@@ -1,0 +1,16 @@
+{
+    "contents" : "\n@RELATION precondition\n\n@ATTRIBUTE created  {T,F}\n@ATTRIBUTE updated \t{T,F}\n@ATTRIBUTE deleted \t{T,F}\n@ATTRIBUTE active\t{T,F}\n@ATTRIBUTE EDAM \t{True,False}\n\n@DATA\nT,T,T,T,True\nT,T,T,F,False\nT,T,F,T,False\nT,T,F,F,False\nT,F,T,T,True\nT,F,T,F,False\nT,F,F,T,False\nT,F,F,F,False\nF,T,T,T,True\nF,T,T,F,False\nF,T,F,T,False\nF,T,F,F,False\nF,F,T,T,True\nF,F,T,F,False\nF,F,F,T,False\nF,F,F,F,False",
+    "created" : 1369183839250.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "104985945",
+    "id" : "2134803E",
+    "lastKnownWriteTime" : 1369184001,
+    "path" : "D:/workspace/R/precond_dt/pred_reduc.arff",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "text"
+}

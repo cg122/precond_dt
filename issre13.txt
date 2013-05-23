@@ -1,0 +1,3 @@
+Logic flow:
+1. background - web apis are popular technology for providing services in the web 2.0 and widely used in many web and mobile applications today. a large number of web apis provide the type of data-centric services that allows developers to manipulate the data behind. However, the hidden data constraints and business rules over the data may 
+2. 

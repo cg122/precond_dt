@@ -1,0 +1,15 @@
+{
+    "contents" : "\n@RELATION precondition\n\n@ATTRIBUTE created\t{T,F}\n@ATTRIBUTE updated \t{T,F}\n@ATTRIBUTE deleted \t{T,F}\n@ATTRIBUTE active\t{T,F}\n@ATTRIBUTE created<updated\t{T,F}\n@ATTRIBUTE created<deleted\t{T,F}\n@ATTRIBUTE updated<deleted\t{T,F}\n@ATTRIBUTE EDAM \t{True,False}\n\n@DATA\nT,T,T,T,T,T,T,True\nT,T,T,T,T,T,F,True\nT,T,T,T,T,F,F,True\nT,T,T,T,F,T,T,True\nT,T,T,T,F,F,T,True\nT,T,T,T,F,F,F,True\nT,T,T,F,T,T,T,False\nT,T,T,F,T,T,F,False\nT,T,T,F,T,F,F,False\nT,T,T,F,F,T,T,False\nT,T,T,F,F,F,T,False\nT,T,T,F,F,F,F,False\nT,T,F,T,T,F,T,False\nT,T,F,T,T,F,F,False\nT,T,F,T,F,F,T,False\nT,T,F,T,F,F,F,False\nT,T,F,F,T,F,T,False\nT,T,F,F,T,F,F,False\nT,T,F,F,F,F,T,False\nT,T,F,F,F,F,F,False\nT,F,T,T,T,T,F,True\nT,F,T,T,F,T,T,True\nT,F,T,T,F,F,F,True\nT,F,T,F,T,T,F,False\nT,F,T,F,F,T,T,False\nT,F,T,F,F,F,F,False\nT,F,F,T,T,F,T,False\nT,F,F,T,F,T,T,False\nT,F,F,T,F,F,F,False\nT,F,F,F,T,F,T,False\nT,F,F,F,F,T,T,False\nT,F,F,F,F,F,F,False\nF,T,T,T,T,T,T,True\nF,T,T,T,T,T,F,True\nF,T,T,T,F,T,T,True\nF,T,T,T,F,F,F,True\nF,T,T,F,T,T,T,False\nF,T,T,F,T,T,F,False\nF,T,T,F,F,T,T,False\nF,T,T,F,F,F,F,False\nF,T,F,T,T,T,F,False\nF,T,F,T,F,T,T,False\nF,T,F,T,F,F,F,False\nF,T,F,F,T,T,F,False\nF,T,F,F,F,T,T,False\nF,T,F,F,F,F,F,False\nF,F,T,T,T,T,T,True\nF,F,T,T,T,F,T,True\nF,F,T,T,F,T,F,True\nF,F,T,T,F,F,F,True\nF,F,T,F,T,T,T,False\nF,F,T,F,T,F,T,False\nF,F,T,F,F,T,F,False\nF,F,T,F,F,F,F,False\nF,F,F,T,T,T,T,False\nF,F,F,T,T,T,F,False\nF,F,F,T,T,F,F,False\nF,F,F,T,F,T,T,False\nF,F,F,T,F,F,T,False\nF,F,F,T,F,F,F,False\nF,F,F,F,T,T,T,False\nF,F,F,F,T,T,F,False\nF,F,F,F,T,F,F,False\nF,F,F,F,F,T,T,False\nF,F,F,F,F,F,T,False\nF,F,F,F,F,F,F,False",
+    "created" : 1369129786375.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2918759219",
+    "id" : "443B90DC",
+    "lastKnownWriteTime" : 1354066919,
+    "path" : "D:/workspace/R/precond_dt/evernote_reduce.arff",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "text"
+}

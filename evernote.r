@@ -11,14 +11,15 @@ sampleLearning <- function(rate=1, datafile="d:/workspace/r/precond_dt/evernote_
   # sample 1/10, 1/4, 1/2, 3/4 of data to learn DT
   ratio = rate # 1/10, 1/4, 1/2, 3/4
   sampledata = subset(data,(row %in% sample(1:length(row),length(row)*ratio,replace=FALSE)))
-  
+
   m_samp = J48(EDAM ~ ., data = sampledata)
   outputdir = "results"
   if(!file.exists(outputdir)){
     dir.create(file.path(getwd(),outputdir))
   }
   # write result DT and data to files
-  resultfile = paste(getwd(),outputdir,paste(paste(format(Sys.time(),"%y%m%d_%H%M%OS3"),length(sampledata),sep="_"),"dat", sep="."), sep="/")
+  resultfile = paste(getwd(),outputdir,paste(paste(format(Sys.time(),"%y%m%d_%H%M%OS3"),length(row)*ratio,sep="_"),"dat", sep="."), sep="/")
+
   tmp = file(resultfile,"w")
   write.table(sampledata,tmp)
   #write_to_dot(m1)
@@ -26,6 +27,6 @@ sampleLearning <- function(rate=1, datafile="d:/workspace/r/precond_dt/evernote_
   close(tmp)
 }
 
-exp <- function(rate,times){
-  for (i in 1:times) sampleLearning(rate)
+exp <- function(rate,times,datafile){
+  for (i in 1:times) sampleLearning(rate,datafile)
 }
